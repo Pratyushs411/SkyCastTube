@@ -65,6 +65,11 @@ function isValidDateString(yyyyMmDd) {
   return !Number.isNaN(dt.getTime());
 }
 
+app.use(cors({
+  origin: "https://sky-cast-tube-s4m1.vercel.app/", // your Vite frontend URL (change to deployed URL later)
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 function daysBetweenInclusive(start, end) {
   const s = new Date(start + 'T00:00:00Z');
   const e = new Date(end + 'T00:00:00Z');
